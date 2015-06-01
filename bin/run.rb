@@ -1,4 +1,5 @@
 require_relative '../db/setup'
+require_relative '../lib/call_response.rb'
 # Remember to put the requires here for all the classes you write and want to use
 
 def parse_params(uri_fragments, query_param_string)
