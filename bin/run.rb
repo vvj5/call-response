@@ -67,18 +67,16 @@ loop do
     #       puts "*** NOT FOUND - HTTP ERROR 204 ***"
     #   end
 
-#     def print_user_name(user)
+#    def print_user_name(user)
 #   return if user.name.nil?
 #   puts user.name
 
-    # def does_id_exist
     # @user = User(PARAMS[:id]).exists?
     #   if @user == false
     #   puts "*** NOT FOUND - HTTP ERROR 204 ***"
     #   end
     # end
 
-    # does_id_exist
     if PARAMS[:id] != nil
       @user = User.find(PARAMS[:id])
       puts "*** HTTP REQUEST SUCCESSFUL - CODE 200 ***\n   #{@user.first_name} #{@user.last_name} #{@user.age}  "
