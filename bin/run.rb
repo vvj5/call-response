@@ -60,14 +60,28 @@ loop do
 
 #     # YOUR CODE GOES BELOW HERE
 
-puts PARAMS
+# puts PARAMS
+
     # if PARAMS[:id] != nil
-      # if User.find(PARAMS[:id]) != true
-      #     puts "*** NOT FOUND - HTTP ERROR 204 ***"
-      # end
+    #   if User.find(PARAMS[:id]) != true
+    #       puts "*** NOT FOUND - HTTP ERROR 204 ***"
+    #   end
+
+#     def print_user_name(user)
+#   return if user.name.nil?
+#   puts user.name
+
+    # def does_id_exist
+    # @user = User(PARAMS[:id]).exists?
+    #   if @user == false
+    #   puts "*** NOT FOUND - HTTP ERROR 204 ***"
+    #   end
+    # end
+
+    # does_id_exist
     if PARAMS[:id] != nil
       @user = User.find(PARAMS[:id])
-      puts "   #{@user.first_name} #{@user.last_name} #{@user.age}  "
+      puts "*** HTTP REQUEST SUCCESSFUL - CODE 200 ***\n   #{@user.first_name} #{@user.last_name} #{@user.age}  "
     elsif PARAMS[:resource] == "users"
       @users = User.all
       @users.each do |user|
