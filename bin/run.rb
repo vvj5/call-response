@@ -58,7 +58,31 @@ loop do
     # Use the REQUEST and PARAMS constants to full the request and
     # return an appropriate reponse
 
-    # YOUR CODE GOES BELOW HERE
+#     # YOUR CODE GOES BELOW HERE
+
+puts PARAMS
+    # if PARAMS[:id] != nil
+      # if User.find(PARAMS[:id]) != true
+      #     puts "*** NOT FOUND - HTTP ERROR 204 ***"
+      # end
+    if PARAMS[:id] != nil
+      @user = User.find(PARAMS[:id])
+      puts "   #{@user.first_name} #{@user.last_name} #{@user.age}  "
+    elsif PARAMS[:resource] == "users"
+      @users = User.all
+      @users.each do |user|
+      puts "   #{user.first_name} #{user.last_name} #{user.age}  "
+    end
+  end
+
+# Given this request GET http://localhost:3000/users HTTP/1.1 I should see
+# ALL the users from the database printed out to me with an appropriate response code.
+
+# Given this request GET http://localhost:3000/users/1 HTTP/1.1
+# I should see ONLY the user from the database with that id.
+
+# Given this request GET http://localhost:3000/users/9999999 HTTP/1.1
+# I should see a message saying it was not found and the appropriate response code returned to me.
 
     # YOUR CODE GOES ABOVE HERE  ^
   end

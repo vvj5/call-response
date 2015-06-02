@@ -7,3 +7,4 @@ class AddUser < ActiveRecord::Migration
     end
   end
 end
+
